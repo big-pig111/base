@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⛓️ BASE Chain Chat Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="page">
+        <div class="login-container">
+            <div class="header-banner">
+                <h1>🔷 BASE Chain Chat Room 🔷</h1>
+                <div class="blink">⛓️ Blockchain Community Chat ⛓️</div>
+                <div style="margin-top: 10px; font-size: 14px; color: #0054e3; font-weight: bold;">
+                    Built on BASE · Powered by Community
+                </div>
+            </div>
+            
+            <div class="login-box">
+                <h2>▓▒░ Enter Your Username ░▒▓</h2>
+                <form id="loginForm">
+                    <input type="text" id="usernameInput" placeholder="🔑 Enter your username..." maxlength="20" required>
+                    <button type="submit" class="retro-button">Connect to Chat</button>
+                </form>
+                <div style="text-align: center; margin-top: 15px; color: #0054e3; font-size: 12px; font-weight: bold;">
+                    ⛓️ Join the BASE Community ⛓️
+                </div>
+            </div>
+
+            <div class="welcome-text">
+                <marquee behavior="scroll" direction="left">
+                    🔷 Welcome to BASE Chain Chat Room! · Connect with builders, traders, and community members · Discuss DeFi, NFTs, and Web3 · Building the future together! 🔷
+                </marquee>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Page -->
+    <div id="chatPage" class="page" style="display: none;">
+        <div class="chat-container">
+            <!-- Title Bar -->
+            <div class="title-bar">
+                <div class="title-text">
+                    ⛓️ BASE Chain Chat Room
+                </div>
+                <div class="online-counter">
+                    🟢 Online: <span id="userCount">0</span> Users
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- Left Sidebar: User List -->
+                <div class="sidebar">
+                    <div class="sidebar-header">
+                        <h3>👥 ONLINE USERS</h3>
+                    </div>
+                    <div id="userList" class="user-list">
+                        <!-- User list will be added dynamically -->
+                    </div>
+                    <div style="padding: 10px; text-align: center; color: #0054e3; font-size: 11px; font-weight: bold; border-top: 1px solid #a0a0a0;">
+                        🔷 BASE Community
+                    </div>
+                </div>
+
+                <!-- Middle: Chat Area -->
+                <div class="chat-area">
+                    <div class="chat-header">
+                        <h2>💬 MAIN CHAT</h2>
+                        <div class="status-bar">
+                            <span id="typingIndicator"></span>
+                        </div>
+                    </div>
+                    
+                    <div id="messages" class="messages">
+                        <div class="system-message">
+                            ╔═══════════════════════════════════╗<br>
+                            ║   🔷 BASE Chain Chat Room 🔷    ║<br>
+                            ╠═══════════════════════════════════╣<br>
+                            ║  Welcome to the BASE community!  ║<br>
+                            ║                                   ║<br>
+                            ║  📌 Chat Rules:                   ║<br>
+                            ║  ✓ Be respectful to all members  ║<br>
+                            ║  ✓ No spam or advertising        ║<br>
+                            ║  ✓ Share knowledge & insights    ║<br>
+                            ║  ✓ Have fun building together!   ║<br>
+                            ║                                   ║<br>
+                            ║  Topics: DeFi · NFTs · Web3 · GM ║<br>
+                            ╚═══════════════════════════════════╝
+                        </div>
+                    </div>
+
+                    <div class="input-area">
+                        <form id="messageForm">
+                            <input type="text" id="messageInput" placeholder="💬 Type your message..." autocomplete="off">
+                            <button type="submit" class="send-button">Send</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar: Info Panel -->
+                <div class="info-panel">
+                    <div class="info-box">
+                        <h3>🔷 ABOUT BASE</h3>
+                        <div class="info-content">
+                            <p><strong>BASE Chain</strong></p>
+                            <p>• Ethereum L2</p>
+                            <p>• Built by Coinbase</p>
+                            <p>• Fast & Low Cost</p>
+                            <p>• EVM Compatible</p>
+                            <p style="margin-top: 8px; color: #0054e3; font-weight: bold;">⛓️ Building Onchain</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>😊 QUICK EMOJIS</h3>
+                        <div class="info-content emoji-list">
+                            <span title="GM">🌅</span>
+                            <span title="Rocket">🚀</span>
+                            <span title="Diamond">💎</span>
+                            <span title="Fire">🔥</span>
+                            <span title="Moon">🌙</span>
+                            <span title="Chart">📈</span>
+                            <span title="Money">💰</span>
+                            <span title="Brain">🧠</span>
+                            <span title="Build">🔨</span>
+                            <span title="Heart">❤️</span>
+                            <span title="Star">⭐</span>
+                            <span title="Check">✅</span>
+                            <span title="Think">🤔</span>
+                            <span title="100">💯</span>
+                            <span title="Celebrate">🎉</span>
+                            <span title="Eyes">👀</span>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>📊 STATISTICS</h3>
+                        <div class="info-content">
+                            <p>📅 Today: <span class="counter">1024</span></p>
+                            <p>📈 Total: <span class="counter">9999</span></p>
+                            <p>⏱️ Online: <span class="counter" id="onlineTime">00:00</span></p>
+                        </div>
+                    </div>
+
+                    <div class="info-box" style="background: linear-gradient(to bottom, #e6f2ff 0%, #cce5ff 100%); border-color: #0054e3;">
+                        <h3 style="color: #0054e3;">⛓️ USEFUL LINKS</h3>
+                        <div class="info-content" style="color: #000; font-size: 11px;">
+                            <p><strong>🔗 Resources:</strong></p>
+                            <p>• base.org</p>
+                            <p>• docs.base.org</p>
+                            <p>• bridge.base.org</p>
+                            <p style="text-align: center; margin-top: 10px; color: #0054e3; font-weight: bold;">🔷 WAGMI 🔷</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box" style="background: linear-gradient(to bottom, #fff9e6 0%, #fff3cc 100%); border-color: #ffb366;">
+                        <h3 style="color: #d93600;">⚠️ DISCLAIMER</h3>
+                        <div class="info-content" style="color: #666; font-size: 10px;">
+                            <p>This is a community chat.</p>
+                            <p>DYOR (Do Your Own</p>
+                            <p>Research). Not financial</p>
+                            <p>advice. Stay safe! 🛡️</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Footer -->
+            <div class="status-footer">
+                <marquee behavior="scroll" direction="left">
+                    🔷 BASE Chain Chat Room · Building the future of Web3 · Community-driven · Onchain together · WAGMI · LFG! 🚀
+                </marquee>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
